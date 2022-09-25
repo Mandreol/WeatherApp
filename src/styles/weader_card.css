@@ -1,0 +1,51 @@
+.weaderCard {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 75%;
+	background-color: rgba(223, 221, 221, 0.418);
+	z-index: 10;
+	gap: 10%;
+	padding: 1rem;
+	border-radius: 1rem;
+	row-gap: 1rem;
+}
+.weaderCard h2:first-child {
+	width: 100%;
+	text-align: center;
+	color: rgb(49, 107, 231);
+}
+.weaderCard__gif {
+	border-radius: 50%;
+}
+.weaderCard__principalInfo {
+	text-align: center;
+	width: 100%;
+}
+.weaderCard__secundaryInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.5rem;
+}
+.weaderCard__secundaryInfo li {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+.weaderCard__secundaryInfo img {
+	width: 30px;
+	height: 30px;
+}
+.button {
+	width: 100px;
+	height: 2rem;
+	background-color: rgb(49, 107, 231);
+	border: none;
+	border-radius: 0.5rem;
+	font-family: "Cabin", sans-serif;
+}
+.button:hover {
+	transform: scale(1.1);
+	filter: brightness(1.2);
+}
