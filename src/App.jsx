@@ -31,12 +31,17 @@ function App() {
 				.catch((err) => console.log(err));
 		}
 	}, [coords, scale]);
-	console.log(weather);
+	let urlVideoBackground = "";
+	weather?.sys.sunrise < Date.now() < weather?.sys.sunset
+		? (urlVideoBackground = "Nubes")
+		: (urlVideoBackground = "noche");
+	console.log(weather?.sys.sunset);
+	console.log(Date.now());
 
 	return (
 		<div className="App">
 			<video autoPlay loop muted>
-				<source src="./video/Nubes.mp4" type="video/mp4" />
+				<source src={`./video/${urlVideoBackground}.mp4`} type="video/mp4" />
 			</video>
 			<h1>Weather App</h1>
 			<WeaderCard weather={weather} scale={scale} handelScale={handelScale} />
