@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import WeaderCard from "./component/WeaderCard";
+import LoadingPage from "./component/LoadingPage";
+import Aplication from "./component/Aplication";
 
 function App() {
 	const [coords, setCoords] = useState();
@@ -33,18 +35,21 @@ function App() {
 	}, [coords, scale]);
 	let urlVideoBackground = "";
 	weather?.sys.sunrise < Date.now() < weather?.sys.sunset
-		? (urlVideoBackground = "Nubes")
-		: (urlVideoBackground = "noche");
-	console.log(weather?.sys.sunset);
-	console.log(Date.now());
+		? (urlVideoBackground = "noche")
+		: (urlVideoBackground = "Nubes");
 
 	return (
 		<div className="App">
-			<video autoPlay loop muted>
-				<source src={`./video/${urlVideoBackground}.mp4`} type="video/mp4" />
-			</video>
-			<h1>Weather App</h1>
-			<WeaderCard weather={weather} scale={scale} handelScale={handelScale} />
+			{weather ? (
+				<Aplication
+					weather={weather}
+					scale={scale}
+					handelScale={handelScale}
+					urlVideoBackground={urlVideoBackground}
+				/>
+			) : (
+				<LoadingPage />
+			)}
 		</div>
 	);
 }

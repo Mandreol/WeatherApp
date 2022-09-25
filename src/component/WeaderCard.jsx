@@ -8,7 +8,7 @@ const WeaderCard = ({ weather, scale, handelScale }) => {
 			<h2>
 				{weather?.name}, {weather?.sys.country}
 			</h2>
-			<img className="weaderCard__gif" src={`./icons/${iconUrl}.gif`} alt="" />
+			<img className="weaderCard__gif" src={`../icons/${iconUrl}.gif`} alt="" />
 			<ul className="weaderCard__secundaryInfo">
 				<li>
 					<img src="./icons/termico.png" alt="" />

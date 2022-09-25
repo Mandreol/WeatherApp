@@ -17,6 +17,7 @@
 }
 .weaderCard__gif {
 	border-radius: 50%;
+	width: 200px;
 }
 .weaderCard__principalInfo {
 	text-align: center;
