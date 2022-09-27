@@ -34,7 +34,7 @@ function App() {
 		}
 	}, [coords, scale]);
 	let urlVideoBackground = "";
-	weather?.sys.sunrise < Date.now() < weather?.sys.sunset
+	weather?.sys.sunrise <= Date.now() && Date.now() <= weather?.sys.sunset
 		? (urlVideoBackground = "Nubes")
 		: (urlVideoBackground = "noche");
 
